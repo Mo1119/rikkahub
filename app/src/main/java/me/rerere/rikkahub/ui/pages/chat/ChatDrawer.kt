@@ -748,20 +748,6 @@ private fun DrawerActions(navController: Navigator) {
             trailingDescription = stringResource(R.string.chat_page_search_chats),
             onTrailingClick = { navController.navigate(Screen.MessageSearch) },
         )
-
-        // 媒体创作入口
-        DrawerEntry(
-            icon = HugeIcons.ImageToVideo,
-            text = stringResource(R.string.media_creation_title),
-            onClick = { navController.navigate(Screen.MediaCreationSessions) },
-        )
-
-        // 翻译入口
-        DrawerEntry(
-            icon = HugeIcons.LanguageCircle,
-            text = stringResource(R.string.chat_page_menu_ai_translator),
-            onClick = { navController.navigate(Screen.Translator) },
-        )
     }
 }
 
