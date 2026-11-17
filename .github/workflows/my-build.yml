@@ -41,6 +41,10 @@ jobs:
             ~/.gradle/wrapper
           key: gradle-cache-v1
 
+      - name: Placeholder google-services.json
+        run: |
+          echo 'eyJwcm9qZWN0X2luZm8iOiB7InByb2plY3RfbnVtYmVyIjogIjAwMDAwMDAwMDAwMCIsICJwcm9qZWN0X2lkIjogInJpa2thaHViLWxvY2FsIiwgInN0b3JhZ2VfYnVja2V0IjogInJpa2thaHViLWxvY2FsLmFwcHNwb3QuY29tIn0sICJjbGllbnQiOiBbeyJjbGllbnRfaW5mbyI6IHsibW9iaWxlc2RrX2FwcF9pZCI6ICIxOjAwMDAwMDAwMDAwMDphbmRyb2lkOjAwMDAwMDAwMDAwMDAwMDAiLCAiYW5kcm9pZF9jbGllbnRfaW5mbyI6IHsicGFja2FnZV9uYW1lIjogIm1lLnJlcmVyZS5yaWtrYWh1Yi5kZWJ1ZyJ9fSwgIm9hdXRoX2NsaWVudCI6IFtdLCAiYXBpX2tleSI6IFt7ImN1cnJlbnRfa2V5IjogIkFJemFTeUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQSJ9XSwgInNlcnZpY2VzIjogeyJhcHBpbnZpdGVfc2VydmljZSI6IHsib3RoZXJfcGxhdGZvcm1fb2F1dGhfY2xpZW50IjogW119fX0sIHsiY2xpZW50X2luZm8iOiB7Im1vYmlsZXNka19hcHBfaWQiOiAiMTowMDAwMDAwMDAwMDA6YW5kcm9pZDowMDAwMDAwMDAwMDAwMDAxIiwgImFuZHJvaWRfY2xpZW50X2luZm8iOiB7InBhY2thZ2VfbmFtZSI6ICJtZS5yZXJlcmUucmlra2FodWIifX0sICJvYXV0aF9jbGllbnQiOiBbXSwgImFwaV9rZXkiOiBbeyJjdXJyZW50X2tleSI6ICJBSXphU3lBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUEifV0sICJzZXJ2aWNlcyI6IHsiYXBwaW52aXRlX3NlcnZpY2UiOiB7Im90aGVyX3BsYXRmb3JtX29hdXRoX2NsaWVudCI6IFtdfX19XSwgImNvbmZpZ3VyYXRpb25fdmVyc2lvbiI6ICIxIn0=' | base64 -d > app/google-services.json
+
       - name: Build debug APK
         run: |
           chmod +x gradlew
