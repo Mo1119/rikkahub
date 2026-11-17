@@ -356,6 +356,11 @@
   <string name="extensions_page_prompt_injection_desc">Manage mode injections</string>
   <string name="extensions_page_lorebooks">Lorebooks</string>
   <string name="extensions_page_lorebooks_desc">Manage lorebook entries</string>
+  <string name="extensions_page_regexes">Message Regexes</string>
+  <string name="extensions_page_regexes_desc">Rewrite messages with regex rules</string>
+  <string name="regex_page_applies_to">Applies to</string>
+  <string name="regex_page_scope_user">User messages</string>
+  <string name="regex_page_scope_assistant">Character replies</string>
   <string name="extensions_page_quick_messages_desc">Manage shared quick message templates</string>
   <string name="extensions_page_section_extensions">Extensions</string>
   <string name="extensions_page_title">Extensions</string>
