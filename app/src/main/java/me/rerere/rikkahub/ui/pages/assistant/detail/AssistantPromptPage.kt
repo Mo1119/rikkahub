@@ -445,58 +445,6 @@ private fun AssistantPromptContent(
             }
         }
 
-        SectionHeader(
-            title = stringResource(R.string.assistant_page_regex_title),
-            description = stringResource(R.string.assistant_page_regex_desc),
-            action = {
-                SectionAddButton(
-                    onClick = {
-                        onUpdate(
-                            assistant.copy(
-                                regexes = assistant.regexes + AssistantRegex(
-                                    id = Uuid.random()
-                                )
-                            )
-                        )
-                    }
-                )
-            },
-        )
-        var expandedIds by remember { mutableStateOf(emptySet<Uuid>()) }
-        ReorderableColumn(
-            list = assistant.regexes,
-            onSettle = { fromIndex, toIndex ->
-                val regexes = assistant.regexes.toMutableList().apply {
-                    add(toIndex, removeAt(fromIndex))
-                }
-                onUpdate(assistant.copy(regexes = regexes))
-            },
-            verticalArrangement = Arrangement.spacedBy(ListItemDefaults.SegmentedGap),
-        ) { index, regex, isDragging ->
-            key(regex.id) {
-                ReorderableItem(
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    val expanded = regex.id in expandedIds
-                    AssistantRegexCard(
-                        regex = regex,
-                        onUpdate = onUpdate,
-                        assistant = assistant,
-                        index = index,
-                        shape = cardGroupItemShape(index, assistant.regexes.size),
-                        expanded = expanded,
-                        onExpandedChange = {
-                            expandedIds = if (it) expandedIds + regex.id else expandedIds - regex.id
-                        },
-                        // 展开后内部是输入框，长按拖拽会与文本选择冲突
-                        modifier = longPressReorder(
-                            isDragging = isDragging,
-                            enabled = !expanded && assistant.regexes.size > 1,
-                        ),
-                    )
-                }
-            }
-        }
     }
 }
 
