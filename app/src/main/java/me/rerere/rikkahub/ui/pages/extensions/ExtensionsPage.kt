@@ -18,8 +18,7 @@ import me.rerere.hugeicons.HugeIcons
 import me.rerere.rikkahub.R
 import me.rerere.hugeicons.stroke.Book03
 import me.rerere.hugeicons.stroke.File02
-import me.rerere.hugeicons.stroke.Folder01
-import me.rerere.hugeicons.stroke.Puzzle
+import me.rerere.hugeicons.stroke.MagicWand01
 import me.rerere.hugeicons.stroke.Zap
 import me.rerere.rikkahub.Screen
 import me.rerere.rikkahub.ui.components.nav.BackButton
@@ -64,22 +63,16 @@ fun ExtensionsPage() {
                         supportingContent = { Text(stringResource(R.string.extensions_page_quick_messages_desc)) },
                     )
                     item(
-                        onClick = { navController.navigate(Screen.Prompts) },
+                        onClick = { navController.navigate(Screen.PromptInjection) },
+                        leadingContent = { CardGroupIcon(HugeIcons.MagicWand01, containerColor = containerColor, contentColor = contentColor) },
+                        headlineContent = { Text(stringResource(R.string.extensions_page_prompt_injection)) },
+                        supportingContent = { Text(stringResource(R.string.extensions_page_prompt_injection_desc)) },
+                    )
+                    item(
+                        onClick = { navController.navigate(Screen.Lorebooks) },
                         leadingContent = { CardGroupIcon(HugeIcons.Book03, containerColor = containerColor, contentColor = contentColor) },
-                        headlineContent = { Text(stringResource(R.string.extensions_page_prompts)) },
-                        supportingContent = { Text(stringResource(R.string.extensions_page_prompts_desc)) },
-                    )
-                    item(
-                        onClick = { navController.navigate(Screen.Skills) },
-                        leadingContent = { CardGroupIcon(HugeIcons.Puzzle, containerColor = containerColor, contentColor = contentColor) },
-                        headlineContent = { Text(stringResource(R.string.extensions_page_agent_skills)) },
-                        supportingContent = { Text(stringResource(R.string.extensions_page_agent_skills_desc)) },
-                    )
-                    item(
-                        onClick = { navController.navigate(Screen.Workspaces) },
-                        leadingContent = { CardGroupIcon(HugeIcons.Folder01, containerColor = containerColor, contentColor = contentColor) },
-                        headlineContent = { Text(stringResource(R.string.extensions_page_workspace)) },
-                        supportingContent = { Text(stringResource(R.string.extensions_page_workspace_desc)) },
+                        headlineContent = { Text(stringResource(R.string.extensions_page_lorebooks)) },
+                        supportingContent = { Text(stringResource(R.string.extensions_page_lorebooks_desc)) },
                     )
                 }
             }
