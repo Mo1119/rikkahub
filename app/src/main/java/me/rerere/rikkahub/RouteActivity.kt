@@ -94,6 +94,7 @@ import me.rerere.rikkahub.ui.pages.chat.ChatPage
 import me.rerere.rikkahub.ui.pages.debug.DebugPage
 import me.rerere.rikkahub.ui.pages.extensions.ExtensionsPage
 import me.rerere.rikkahub.ui.pages.extensions.PromptPage
+import me.rerere.rikkahub.ui.pages.extensions.RegexPage
 import me.rerere.rikkahub.ui.pages.extensions.QuickMessagesPage
 import me.rerere.rikkahub.ui.pages.extensions.skills.SkillDetailPage
 import me.rerere.rikkahub.ui.pages.memory.MemoryFilePage
@@ -570,6 +571,10 @@ class RouteActivity : ComponentActivity() {
                                 PromptPage(onlyMode = 1)
                             }
 
+                            entry<Screen.Regexes> {
+                                RegexPage()
+                            }
+
                             entry<Screen.Skills> {
                                 SkillsPage()
                             }
@@ -819,6 +824,9 @@ sealed interface Screen : NavKey {
 
     @Serializable
     data object Lorebooks : Screen
+
+    @Serializable
+    data object Regexes : Screen
 
     @Serializable
     data object Skills : Screen
