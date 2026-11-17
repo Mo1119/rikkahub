@@ -380,7 +380,8 @@ private fun ChatPageContent(
                     },
                     onUpdateTitle = {
                         vm.updateTitle(it)
-                    }
+                    },
+                    onStartVoiceMode = onStartVoiceMode,
                 )
             },
             bottomBar = {
@@ -646,7 +647,8 @@ private fun TopBar(
     onShowOverview: () -> Unit,
     onExport: () -> Unit,
     onDelete: () -> Unit,
-    onUpdateTitle: (String) -> Unit
+    onUpdateTitle: (String) -> Unit,
+    onStartVoiceMode: () -> Unit
 ) {
     val scope = rememberCoroutineScope()
     val toaster = LocalToaster.current
@@ -722,12 +724,13 @@ private fun TopBar(
                 ) {
                     Icon(HugeIcons.MessageAdd01, "New Message")
                 }
-                ChatPageMenu(
-                    enabled = conversation.messageNodes.isNotEmpty(),
-                    onShowOverview = onShowOverview,
-                    onExport = onExport,
-                    onDelete = onDelete,
-                )
+                IconButton(
+                    onClick = {
+                        onStartVoiceMode()
+                    }
+                ) {
+                    Icon(HugeIcons.Voice, "Voice Mode")
+                }
             }
         },
     )
