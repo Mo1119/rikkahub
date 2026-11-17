@@ -15,7 +15,7 @@
   <string name="assistant_detail_local_tools_desc">啟用本機工具如 JavaScript 引擎</string>
   <string name="assistant_detail_mcp_desc">為助理設定 MCP 伺服器工具</string>
   <string name="assistant_detail_memory_desc">管理助理記憶體與近期聊天參考</string>
-  <string name="assistant_detail_prompt_desc">設定系統提示、訊息範本與正規表示式規則</string>
+  <string name="assistant_detail_prompt_desc">設定人設、訊息範本與正規表示式規則</string>
   <string name="assistant_detail_request_desc">設定自訂請求標頭與主體參數</string>
   <string name="assistant_extensions_page_empty_lorebooks">尚無可用的 lorebook，請在 Prompts 中建立</string>
   <string name="assistant_extensions_page_empty_mode_injections">尚無可用的模式注入，請在 Prompts 中建立一個</string>
@@ -38,8 +38,8 @@
   <string name="assistant_page_add">添加</string>
   <string name="assistant_page_add_body">添加 Body</string>
   <string name="assistant_page_add_header">添加 Header</string>
-  <string name="assistant_page_allow_conversation_system_prompt">獨立對話系統提示</string>
-  <string name="assistant_page_allow_conversation_system_prompt_desc">允許每個對話單獨設定系統提示詞</string>
+  <string name="assistant_page_allow_conversation_system_prompt">獨立對話人設</string>
+  <string name="assistant_page_allow_conversation_system_prompt_desc">允許每個對話單獨設定人設</string>
   <string name="assistant_page_available_variables">"可用變數: "</string>
   <string name="assistant_page_background_opacity">背景透明度</string>
   <string name="assistant_page_background_opacity_desc">調整聊天背景圖片顯示透明度</string>
@@ -118,7 +118,7 @@
   <string name="assistant_page_stream_output">串流輸出</string>
   <string name="assistant_page_stream_output_desc">是否啟用訊息的串流輸出</string>
   <string name="assistant_page_strict">嚴謹</string>
-  <string name="assistant_page_system_prompt">系統提示詞</string>
+  <string name="assistant_page_system_prompt">人設</string>
   <string name="assistant_page_tab_basic">基本設定</string>
   <string name="assistant_page_tab_extensions">擴充功能</string>
   <string name="assistant_page_tab_local_tools">本地工具</string>
@@ -255,9 +255,9 @@
   <string name="chat_page_compress_context_desc">將對話壓縮成摘要以節省 token</string>
   <string name="chat_page_compress_context_title">壓縮對話紀錄</string>
   <string name="chat_page_compressing">正在壓縮...</string>
-  <string name="chat_page_conversation_system_prompt">對話系統提示</string>
+  <string name="chat_page_conversation_system_prompt">對話人設</string>
   <string name="chat_page_conversation_system_prompt_clear">清除</string>
-  <string name="chat_page_conversation_system_prompt_hint">覆蓋此對話的助理系統提示</string>
+  <string name="chat_page_conversation_system_prompt_hint">覆蓋此對話的助理人設</string>
   <string name="chat_page_conversation_system_prompt_save">儲存</string>
   <string name="chat_page_delete">刪除</string>
   <string name="chat_page_dismiss_error">關閉錯誤</string>
@@ -352,6 +352,11 @@
   <string name="extensions_page_prompt_injection_desc">管理模式注入，控制注入位置與優先順序</string>
   <string name="extensions_page_lorebooks">世界書</string>
   <string name="extensions_page_lorebooks_desc">管理世界書條目</string>
+  <string name="extensions_page_regexes">訊息正規表示式</string>
+  <string name="extensions_page_regexes_desc">用正規表示式改寫傳送與接收的訊息</string>
+  <string name="regex_page_applies_to">套用到角色</string>
+  <string name="regex_page_scope_user">使用者訊息</string>
+  <string name="regex_page_scope_assistant">角色回覆</string>
   <string name="extensions_page_quick_messages_desc">管理共用的快速訊息範本</string>
   <string name="extensions_page_section_extensions">擴充功能</string>
   <string name="extensions_page_title">擴充功能</string>
@@ -492,9 +497,9 @@
   <string name="prompt_page_mode_injection_tab">模式注入</string>
   <string name="prompt_page_name">名稱</string>
   <string name="prompt_page_new_keyword">新關鍵字</string>
-  <string name="prompt_page_position_after_system">系統提示之後</string>
+  <string name="prompt_page_position_after_system">人設之後</string>
   <string name="prompt_page_position_at_depth">在深度</string>
-  <string name="prompt_page_position_before_system">系統提示之前</string>
+  <string name="prompt_page_position_before_system">人設之前</string>
   <string name="prompt_page_position_bottom_of_chat">最新訊息之前</string>
   <string name="prompt_page_position_top_of_chat">聊天頂端</string>
   <string name="prompt_page_priority_format">優先順序：%d</string>
@@ -562,7 +567,7 @@
   <string name="search_detail_search_url">搜尋網址</string>
   <string name="search_detail_summary">摘要</string>
   <string name="search_detail_summary_desc">啟用摘要產生</string>
-  <string name="search_detail_system_prompt">系統提示</string>
+  <string name="search_detail_system_prompt">人設</string>
   <string name="search_detail_unknown_error">未知錯誤</string>
   <string name="search_detail_username">使用者名稱</string>
   <string name="search_page_hint">輸入關鍵字並按下搜尋以尋找訊息</string>
