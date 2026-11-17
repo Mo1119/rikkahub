@@ -50,9 +50,24 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleGithubDebug --stacktrace
 
+      - name: Trim APKs (keep arm64 only)
+        run: |
+          D=app/build/outputs/apk/github/debug
+          ls -l "$D"
+          mkdir -p /tmp/apk
+          F=$(ls "$D"/*arm64-v8a*.apk 2>/dev/null | head -1)
+          if [ -n "$F" ]; then
+            cp "$F" /tmp/apk/
+            echo "kept: $F"
+          else
+            echo "no arm64 apk found, keep all"
+            cp "$D"/*.apk /tmp/apk/
+          fi
+          ls -lh /tmp/apk
+
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: rikkahub-debug-apk
-          path: app/build/outputs/apk/github/debug/*.apk
+          path: /tmp/apk/*.apk
           if-no-files-found: error
