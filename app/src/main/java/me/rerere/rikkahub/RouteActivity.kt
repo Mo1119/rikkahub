@@ -562,6 +562,14 @@ class RouteActivity : ComponentActivity() {
                                 PromptPage()
                             }
 
+                            entry<Screen.PromptInjection> {
+                                PromptPage(onlyMode = 0)
+                            }
+
+                            entry<Screen.Lorebooks> {
+                                PromptPage(onlyMode = 1)
+                            }
+
                             entry<Screen.Skills> {
                                 SkillsPage()
                             }
@@ -805,6 +813,12 @@ sealed interface Screen : NavKey {
 
     @Serializable
     data object Prompts : Screen
+
+    @Serializable
+    data object PromptInjection : Screen
+
+    @Serializable
+    data object Lorebooks : Screen
 
     @Serializable
     data object Skills : Screen
