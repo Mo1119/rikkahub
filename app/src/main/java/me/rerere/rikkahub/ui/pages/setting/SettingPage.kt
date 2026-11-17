@@ -263,22 +263,10 @@ fun SettingPage(vm: SettingVM = koinViewModel()) {
                         headlineContent = { Text(stringResource(R.string.setting_page_tts_service)) },
                     )
                     item(
-                        onClick = { navController.navigate(Screen.SettingMedia) },
-                        leadingContent = { CardGroupIcon(HugeIcons.Image02, containerColor = containerColor, contentColor = contentColor) },
-                        supportingContent = { Text(stringResource(R.string.setting_page_media_desc)) },
-                        headlineContent = { Text(stringResource(R.string.setting_page_media)) },
-                    )
-                    item(
                         onClick = { navController.navigate(Screen.SettingMcp) },
                         leadingContent = { CardGroupIcon(HugeIcons.McpServer, containerColor = containerColor, contentColor = contentColor) },
                         supportingContent = { Text(stringResource(R.string.setting_page_mcp_desc)) },
                         headlineContent = { Text(stringResource(R.string.setting_page_mcp)) },
-                    )
-                    item(
-                        onClick = { navController.navigate(Screen.SettingWeb) },
-                        leadingContent = { CardGroupIcon(HugeIcons.ServerStack01, containerColor = containerColor, contentColor = contentColor) },
-                        supportingContent = { Text(stringResource(R.string.setting_page_web_server_desc)) },
-                        headlineContent = { Text(stringResource(R.string.setting_page_web_server)) },
                     )
                 }
             }
