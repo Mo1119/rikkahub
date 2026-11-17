@@ -130,16 +130,21 @@ private enum class PromptTab(
 }
 
 @Composable
-fun PromptPage(vm: PromptVM = koinViewModel()) {
+fun PromptPage(vm: PromptVM = koinViewModel(), onlyMode: Int? = null) {
     val settings by vm.settings.collectAsStateWithLifecycle()
     val pagerState = rememberPagerState { PromptTab.entries.size }
     val scrollBehavior = TopAppBarDefaults.exitUntilCollapsedScrollBehavior()
+    val pageTitle = when (onlyMode) {
+        0 -> stringResource(R.string.extensions_page_prompt_injection)
+        1 -> stringResource(R.string.extensions_page_lorebooks)
+        else -> stringResource(R.string.prompt_page_title)
+    }
 
     Scaffold(
         topBar = {
             LargeFlexibleTopAppBar(
                 navigationIcon = { BackButton() },
-                title = { Text(stringResource(R.string.prompt_page_title)) },
+                title = { Text(pageTitle) },
                 scrollBehavior = scrollBehavior,
                 colors = CustomColors.topBarColors,
             )
@@ -152,29 +157,45 @@ fun PromptPage(vm: PromptVM = koinViewModel()) {
                 .fillMaxSize()
                 .padding(innerPadding)
         ) {
-            PagerTabs(
-                pagerState = pagerState,
-                tabs = PromptTab.entries,
-                modifier = Modifier.padding(bottom = 4.dp),
-                contentPadding = PaddingValues(horizontal = 16.dp),
-            )
+            if (onlyMode == null) {
+                PagerTabs(
+                    pagerState = pagerState,
+                    tabs = PromptTab.entries,
+                    modifier = Modifier.padding(bottom = 4.dp),
+                    contentPadding = PaddingValues(horizontal = 16.dp),
+                )
 
-            HorizontalPager(
-                state = pagerState,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .weight(1f),
-            ) { page ->
-                when (PromptTab.entries[page]) {
-                    PromptTab.MODE_INJECTIONS -> ModeInjectionTab(
-                        modeInjections = settings.modeInjections,
-                        onUpdate = { vm.updateSettings { latest -> latest.copy(modeInjections = it) } }
-                    )
+                HorizontalPager(
+                    state = pagerState,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .weight(1f),
+                ) { page ->
+                    when (PromptTab.entries[page]) {
+                        PromptTab.MODE_INJECTIONS -> ModeInjectionTab(
+                            modeInjections = settings.modeInjections,
+                            onUpdate = { vm.updateSettings { latest -> latest.copy(modeInjections = it) } }
+                        )
 
-                    PromptTab.LOREBOOKS -> LorebookTab(
-                        lorebooks = settings.lorebooks,
-                        onUpdate = { vm.updateSettings { latest -> latest.copy(lorebooks = it) } }
-                    )
+                        PromptTab.LOREBOOKS -> LorebookTab(
+                            lorebooks = settings.lorebooks,
+                            onUpdate = { vm.updateSettings { latest -> latest.copy(lorebooks = it) } }
+                        )
+                    }
+                }
+            } else {
+                Box(modifier = Modifier.fillMaxWidth().weight(1f)) {
+                    if (onlyMode == 0) {
+                        ModeInjectionTab(
+                            modeInjections = settings.modeInjections,
+                            onUpdate = { vm.updateSettings { latest -> latest.copy(modeInjections = it) } }
+                        )
+                    } else {
+                        LorebookTab(
+                            lorebooks = settings.lorebooks,
+                            onUpdate = { vm.updateSettings { latest -> latest.copy(lorebooks = it) } }
+                        )
+                    }
                 }
             }
         }
