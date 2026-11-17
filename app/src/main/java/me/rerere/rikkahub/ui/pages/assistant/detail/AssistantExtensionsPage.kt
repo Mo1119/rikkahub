@@ -152,30 +152,6 @@ fun AssistantExtensionsPage(id: String) {
                             )
                         }
                     }
-
-                    3 -> {
-                        if (skills.isEmpty()) {
-                            ExtensionEmptyState(
-                                message = stringResource(R.string.assistant_extensions_page_empty_skills),
-                                buttonText = stringResource(R.string.assistant_extensions_page_goto_extensions),
-                                onAction = { navController.navigate(Screen.Skills) },
-                                icon = ExtensionTab.SKILLS.icon,
-                            )
-                        } else {
-                            SkillsContent(
-                                contentPadding = listPadding,
-                                colors = listColors,
-                                skills = skills,
-                                enabledSkills = assistant.enabledSkills,
-                                onToggle = { name, checked ->
-                                    val newSkills = if (checked) assistant.enabledSkills + name
-                                    else assistant.enabledSkills - name
-                                    vm.update(assistant.copy(enabledSkills = newSkills))
-                                },
-                                onManage = { navController.navigate(Screen.Skills) },
-                            )
-                        }
-                    }
                 }
             }
         }
