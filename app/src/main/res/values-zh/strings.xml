@@ -15,7 +15,7 @@
   <string name="assistant_detail_local_tools_desc">启用本地工具（如 JavaScript 引擎）</string>
   <string name="assistant_detail_mcp_desc">为角色配置 MCP 服务器工具</string>
   <string name="assistant_detail_memory_desc">管理角色记忆和最近的聊天引用</string>
-  <string name="assistant_detail_prompt_desc">设置系统提示、消息模板和正则规则</string>
+  <string name="assistant_detail_prompt_desc">设置人设、消息模板和正则规则</string>
   <string name="assistant_detail_request_desc">配置自定义请求头和正文参数</string>
   <string name="assistant_extensions_page_empty_lorebooks">没有世界书，前往提示词管理创建</string>
   <string name="assistant_extensions_page_empty_mode_injections">没有模式注入，前往提示词管理创建</string>
@@ -38,8 +38,8 @@
   <string name="assistant_page_add">添加</string>
   <string name="assistant_page_add_body">添加 Body</string>
   <string name="assistant_page_add_header">添加 Header</string>
-  <string name="assistant_page_allow_conversation_system_prompt">独立对话系统提示</string>
-  <string name="assistant_page_allow_conversation_system_prompt_desc">允许每个对话单独设置系统提示词</string>
+  <string name="assistant_page_allow_conversation_system_prompt">独立对话人设</string>
+  <string name="assistant_page_allow_conversation_system_prompt_desc">允许每个对话单独设置人设</string>
   <string name="assistant_page_available_variables">"可用变量: "</string>
   <string name="assistant_page_background_opacity">背景透明度</string>
   <string name="assistant_page_background_opacity_desc">调整聊天背景图显示透明度</string>
@@ -118,7 +118,7 @@
   <string name="assistant_page_stream_output">流式输出</string>
   <string name="assistant_page_stream_output_desc">是否启用消息的流式输出</string>
   <string name="assistant_page_strict">严谨</string>
-  <string name="assistant_page_system_prompt">系统提示词</string>
+  <string name="assistant_page_system_prompt">人设</string>
   <string name="assistant_page_tab_basic">基础设定</string>
   <string name="assistant_page_tab_extensions">扩展管理</string>
   <string name="assistant_page_tab_local_tools">本地工具</string>
@@ -257,9 +257,9 @@
   <string name="chat_page_compress_context_desc">将对话压缩为摘要以节省令牌</string>
   <string name="chat_page_compress_context_title">压缩对话历史</string>
   <string name="chat_page_compressing">正在压缩...</string>
-  <string name="chat_page_conversation_system_prompt">对话系统提示</string>
+  <string name="chat_page_conversation_system_prompt">对话人设</string>
   <string name="chat_page_conversation_system_prompt_clear">清除</string>
-  <string name="chat_page_conversation_system_prompt_hint">覆盖此对话的角色系统提示</string>
+  <string name="chat_page_conversation_system_prompt_hint">覆盖此对话的角色人设</string>
   <string name="chat_page_conversation_system_prompt_save">保存</string>
   <string name="chat_page_delete">删除</string>
   <string name="chat_page_dismiss_error">关闭错误</string>
@@ -355,6 +355,11 @@
   <string name="extensions_page_prompt_injection_desc">管理模式注入，控制注入位置与优先级</string>
   <string name="extensions_page_lorebooks">世界书</string>
   <string name="extensions_page_lorebooks_desc">管理世界书条目</string>
+  <string name="extensions_page_regexes">消息正则</string>
+  <string name="extensions_page_regexes_desc">用正则改写发送与接收的消息</string>
+  <string name="regex_page_applies_to">应用到角色</string>
+  <string name="regex_page_scope_user">用户消息</string>
+  <string name="regex_page_scope_assistant">角色回复</string>
   <string name="extensions_page_quick_messages_desc">管理共享的快速消息模板</string>
   <string name="extensions_page_section_extensions">扩展</string>
   <string name="extensions_page_title">扩展管理</string>
@@ -496,9 +501,9 @@
   <string name="prompt_page_mode_injection_tab">模式注入</string>
   <string name="prompt_page_name">名称</string>
   <string name="prompt_page_new_keyword">新关键词</string>
-  <string name="prompt_page_position_after_system">系统提示词后</string>
+  <string name="prompt_page_position_after_system">人设后</string>
   <string name="prompt_page_position_at_depth">在深度</string>
-  <string name="prompt_page_position_before_system">系统提示词前</string>
+  <string name="prompt_page_position_before_system">人设前</string>
   <string name="prompt_page_position_bottom_of_chat">最新消息前</string>
   <string name="prompt_page_position_top_of_chat">对话开头</string>
   <string name="prompt_page_priority_format">优先级：%d</string>
@@ -566,7 +571,7 @@
   <string name="search_detail_search_url">搜索网址</string>
   <string name="search_detail_summary">摘要</string>
   <string name="search_detail_summary_desc">启用摘要生成</string>
-  <string name="search_detail_system_prompt">系统提示</string>
+  <string name="search_detail_system_prompt">人设</string>
   <string name="search_detail_unknown_error">未知错误</string>
   <string name="search_detail_username">用户名</string>
   <string name="search_page_hint">输入关键词并点击搜索以查找消息</string>
