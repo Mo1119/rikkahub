@@ -39,8 +39,7 @@ internal enum class ExtensionTab(
 ) : PagerTab {
     QUICK_MESSAGES(HugeIcons.Zap, R.string.extension_selector_tab_quick_messages),
     MODE_INJECTIONS(HugeIcons.MagicWand01, R.string.extension_selector_tab_mode_injections),
-    LOREBOOKS(HugeIcons.Book01, R.string.extension_selector_tab_lorebooks),
-    SKILLS(HugeIcons.Puzzle, R.string.extension_selector_tab_skills);
+    LOREBOOKS(HugeIcons.Book01, R.string.extension_selector_tab_lorebooks);
 
     override val label: String
         @Composable get() = stringResource(labelRes)
@@ -155,31 +154,6 @@ fun ExtensionSelector(
                             message = stringResource(R.string.extension_selector_lorebooks_empty),
                             buttonText = stringResource(R.string.extension_selector_go_to_extensions),
                             onAction = onNavigateToPrompts,
-                            icon = tab.icon,
-                        )
-                    }
-                }
-
-                ExtensionTab.SKILLS -> {
-                    if (skills.isNotEmpty()) {
-                        SkillsContent(
-                            skills = skills,
-                            enabledSkills = assistant.enabledSkills,
-                            onToggle = { name, checked ->
-                                val newSkills = if (checked) {
-                                    assistant.enabledSkills + name
-                                } else {
-                                    assistant.enabledSkills - name
-                                }
-                                onUpdate(assistant.copy(enabledSkills = newSkills))
-                            },
-                            onManage = onNavigateToSkills,
-                        )
-                    } else {
-                        ExtensionEmptyState(
-                            message = stringResource(R.string.extension_selector_skills_empty),
-                            buttonText = stringResource(R.string.extension_selector_go_to_skills),
-                            onAction = onNavigateToSkills,
                             icon = tab.icon,
                         )
                     }
