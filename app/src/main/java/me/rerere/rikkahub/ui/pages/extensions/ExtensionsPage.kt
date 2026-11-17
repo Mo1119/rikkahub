@@ -19,6 +19,7 @@ import me.rerere.rikkahub.R
 import me.rerere.hugeicons.stroke.Book03
 import me.rerere.hugeicons.stroke.File02
 import me.rerere.hugeicons.stroke.MagicWand01
+import me.rerere.hugeicons.stroke.LeftToRightListBullet
 import me.rerere.hugeicons.stroke.Zap
 import me.rerere.rikkahub.Screen
 import me.rerere.rikkahub.ui.components.nav.BackButton
@@ -67,6 +68,12 @@ fun ExtensionsPage() {
                         leadingContent = { CardGroupIcon(HugeIcons.MagicWand01, containerColor = containerColor, contentColor = contentColor) },
                         headlineContent = { Text(stringResource(R.string.extensions_page_prompt_injection)) },
                         supportingContent = { Text(stringResource(R.string.extensions_page_prompt_injection_desc)) },
+                    )
+                    item(
+                        onClick = { navController.navigate(Screen.Regexes) },
+                        leadingContent = { CardGroupIcon(HugeIcons.LeftToRightListBullet, containerColor = containerColor, contentColor = contentColor) },
+                        headlineContent = { Text(stringResource(R.string.extensions_page_regexes)) },
+                        supportingContent = { Text(stringResource(R.string.extensions_page_regexes_desc)) },
                     )
                     item(
                         onClick = { navController.navigate(Screen.Lorebooks) },
