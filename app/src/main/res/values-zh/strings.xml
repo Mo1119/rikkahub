@@ -344,6 +344,8 @@
   <string name="extension_selector_quick_messages_empty">暂无快捷消息</string>
   <string name="extension_selector_skills_empty">暂无 Skills</string>
   <string name="extension_selector_tab_lorebooks">世界书</string>
+  <string name="extension_selector_tab_regexes">正则</string>
+  <string name="extension_selector_regexes_empty">还没有正则规则</string>
   <string name="extension_selector_tab_mode_injections">模式注入</string>
   <string name="extension_selector_tab_quick_messages">快捷消息</string>
   <string name="extension_selector_tab_skills">Skills</string>
