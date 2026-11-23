@@ -35,6 +35,8 @@ data class Assistant(
     val presetMessages: List<UIMessage> = emptyList(),
     val quickMessageIds: Set<Uuid> = emptySet(),
     val regexes: List<AssistantRegex> = emptyList(),
+    val regexIds: Set<Uuid> = emptySet(), // 启用中的正则
+    val regexSelectionEnabled: Boolean = false, // 是否按 regexIds 筛选
     val reasoningLevel: ReasoningLevel = ReasoningLevel.AUTO,
     val maxTokens: Int? = null,
     val customHeaders: List<CustomHeader> = emptyList(),
@@ -98,7 +100,13 @@ fun String.replaceRegexes(
 ): String {
     if (assistant == null) return this
     if (assistant.regexes.isEmpty()) return this
-    return assistant.regexes.fold(this) { acc, regex ->
+    val activeRegexes = if (assistant.regexSelectionEnabled) {
+        assistant.regexes.filter { it.id in assistant.regexIds }
+    } else {
+        assistant.regexes
+    }
+    if (activeRegexes.isEmpty()) return this
+    return activeRegexes.fold(this) { acc, regex ->
         if (regex.enabled && regex.visualOnly == visual && regex.affectingScope.contains(scope)) {
             val compiled = compileRegexCached(regex.findRegex) ?: return@fold acc
             try {
