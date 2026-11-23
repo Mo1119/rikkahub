@@ -500,9 +500,9 @@ private fun ExtensionPickerPage(
                 onDismissAll()
                 navController.navigate(Screen.Prompts)
             },
-            onNavigateToSkills = {
+            onNavigateToRegexes = {
                 onDismissAll()
-                navController.navigate(Screen.Skills)
+                navController.navigate(Screen.Regexes)
             })
 
         Spacer(modifier = Modifier.height(16.dp))
